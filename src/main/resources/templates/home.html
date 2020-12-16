@@ -1,13 +1,37 @@
+<!DOCTYPE html>
 <html>
-	<head th:replace="~{base :: head}">
-	
-	</head>
-	<body>
-	
-	    <div th:replace="~{base :: menu}"></div>
-	
-		<div class="container"></div>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
 			
-			<script src="../static/menu.js" type="text/javascript"></script>		
-	</body>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	
+		<div class="card-body">
+			<div class="row">
+				<div class="col-12 col-sm-8 mb-3">
+									
+					<div>Produto</div> 
+					<div> <input class="form-control"  value="url do produto" /></div>
+					 
+					<div>Descrição</div>
+					<div>
+						<textarea class="form-control" >descrição do pedido</textarea>
+					</div>
+				</div>
+				<div class="col-12 col-sm-4">
+					<div>
+						<img class="img-thumbnail"  src="" />
+					</div>
+				</div>
+					
+	
+	         </div>
+	    </div>
+	</div>   
+</body>
 </html>
