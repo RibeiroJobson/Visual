@@ -20,12 +20,12 @@ import br.com.luiz.mvc.Visual.repository.UsuarioRepository;
 public class HomeController {
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private UsuarioRepository UsuarioRepository;
 	
 	
 	@GetMapping
 	public String home(Model model) {
-		List<Usuario> usuario = usuarioRepository.findAll();
+		List<Usuario> usuario = UsuarioRepository.findAll();
 		model.addAttribute("usuarios", usuario);
 		return "home"; 
 	}
