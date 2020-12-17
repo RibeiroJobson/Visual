@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
+ <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	       <div class="card">
+		    <div class="card-header">:: Cadastro de Usuário ::</div>
+		    <div class="card-body">
+		    
+		      <div class="row">
+				<div class="col-12 col-sm-8 mb-3">
+					<form th:object="${requisicaoNovoUsuario}" class="card-body" action="/usuario/novo" method="POST">				
+						<div class="form-group">
+							<label for="nomeusuario">Nome</label>
+							<input th:field="*{nomeusuario}" th:errorClass="is-invalid" class="form-control" placeholder="Nome do Usuário"/>
+							<div class="invalid-feedback" th:errors="*{nomeusuario}">
+								Erros do nome do usuário
+							</div>
+					   </div>						
+						<div class="form-group">
+							<label for="apelidousuario">Apelido</label>
+							<input th:field="*{apelidousuario}" th:errorClass="is-invalid" class="form-control" placeholder="Apelido do Usuário"/>
+							<div class="invalid-feedback" th:errors="*{apelidousuario}">
+								Erros do nome do apelido
+							</div>
+						</div>
+                        
+                        <div class="form-group">
+							<label for="email">E-mail</label>
+							<input th:field="*{email}" th:errorClass="is-invalid" class="form-control" placeholder="Informe o e-mail"/>
+							<div class="invalid-feedback" th:errors="*{email}">
+								Erros do nome do apelido
+							</div>
+						</div>
+                        
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+					</form>
+				</div>
+								
+	
+	         </div>
+		    
+		    </div> 
+		    
+		  </div> 
+	     
+		
+	</div>   
+</body>
+</html>

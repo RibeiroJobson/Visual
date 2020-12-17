@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
+ <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	       <div class="card">
+		    <div class="card-header">:: Cadastro de Produto ::</div>
+		    <div class="card-body">
+		    
+		      <div class="row">
+				<div class="col-12 col-sm-8 mb-3">
+					<form th:object="${requisicaoNovoProduto}" class="card-body" action="/produto/novo" method="POST">				
+						<div class="form-group">
+							<label for="nomeproduto">Nome</label>
+							<input th:field="*{nomeproduto}" th:errorClass="is-invalid"  class="form-control" placeholder="Nome do produto"/>
+							<div class="invalid-feedback" th:errors="*{nomeproduto}">
+								Erros do nome do usuário
+							</div>
+					   </div>						
+						<div class="form-group">
+							<label for="urlimagem">URL imagem</label>
+							<input th:field="*{urlimagem}" th:errorClass="is-invalid" class="form-control" placeholder="URL da imagem produto"/>
+							<div class="invalid-feedback" th:errors="*{urlimagem}">
+								Erros do nome do usuário
+							</div>
+					   </div>	
+                        
+                        <div class="form-group">
+							<label for="preco">Preço</label>
+							<input th:field="*{preco}"  class="form-control" type="number" step="any" placeholder="Preço"/>
+							
+						</div>
+						
+						<div class="form-group">
+						 <label for="descricao">Descrição</label>
+						 <textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes do produto"></textarea>
+					    </div>
+                        
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+					</form>
+				</div>
+								
+	
+	         </div>
+		    
+		    </div> 
+		    
+		  </div> 
+	     
+		
+	</div>   
+</body>
+</html>

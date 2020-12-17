@@ -2,7 +2,7 @@
 <html>
 <head th:replace="~{base :: head}">
  <meta charset="UTF-8" />
-			
+ <title>Cadastro de Usuário</title>
 </head>
 
 <body>
@@ -10,28 +10,28 @@
 	<nav th:replace="~{base :: menu}"></nav> 
 	  
 	 <div class="container">
-	
-		<div class="card-body">
-			<div class="row">
-				<div class="col-12 col-sm-8 mb-3">
-									
-					<div>Produto</div> 
-					<div> <input class="form-control"  value="url do produto" /></div>
-					 
-					<div>Descrição</div>
-					<div>
-						<textarea class="form-control" >descrição do pedido</textarea>
-					</div>
+	      
+		    <div class="card-header">:: Lista Usuario ::</div>
+		    <div class="card-body">
+		         <div class="row ">
+				     <div class="col-md-6 alert alert-dark mb-0">Nome:</div>
+				     <div class="col-md-2 alert alert-dark mb-0">Apelido:</div>
+				     <div class="col-md-4 alert alert-dark mb-0">Apelido:</div>
 				</div>
-				<div class="col-12 col-sm-4">
-					<div>
-						<img class="img-thumbnail"  src="" />
-					</div>
-				</div>
-					
-	
-	         </div>
-	    </div>
-	</div>   
+								
+			     <div class="card" th:each="usuario : ${usuarios}">
+		
+	                <div class="row">
+	                    <div class="col-md-6"><span th:text="${usuario.nome}"> </div>
+	                    <div class="col-md-2"><span th:text="${usuario.apelido}"></div>
+	                    <div class="col-md-4"><span th:text="${usuario.email}"></div>
+	                </div> 
+	   
+				  </div> 
+		    
+		     </div> 
+	     
+		
+	  </div>   
 </body>
 </html>

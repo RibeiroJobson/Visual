@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
+ <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	       <div class="card">
+		    <div class="card-header">:: Cadastro de Cliente ::</div>
+		    <div class="card-body">
+		    
+		      <div class="row">
+				<div class="col-12 col-sm-8 mb-3">
+					<form th:object="${requisicaoNovoCliente}" class="card-body" action="/cliente/novo" method="POST">				
+						<div class="form-group">
+							<label for="nomecliente">Nome</label>
+							<input th:field="*{nomecliente}" th:errorClass="is-invalid" class="form-control" placeholder="Nome do Cliente"/>
+							<div class="invalid-feedback" th:errors="*{nomecliente}">
+								Erros do nome do cliente
+							</div>
+					   </div>						
+						
+						<div class="form-group">
+							<label for="email">E-mail</label>
+							<input th:field="*{email}" th:errorClass="is-invalid" class="form-control" placeholder="Informe o e-mail"/>
+							<div class="invalid-feedback" th:errors="*{email}">
+								Erros do nome do apelido
+							</div>
+						</div>
+						
+						 <div class="row">
+						      <div class="col-lg-10 mb-3">
+							      <div class="form-group">
+									<label for="enderecocliente">Endereco</label>
+									<input th:field="*{enderecocliente}"  class="form-control" placeholder="Logradouro"/>
+								  </div>
+							  </div>
+							 <div class="col-lg-2 mb-3">	
+	                              <div class="form-group">							
+									<label for="numero">número</label>
+									<input th:field="*{numero}"  class="form-control" placeholder="Número"/>
+								</div>
+							</div>	
+						</div>
+						
+						<div class="row">
+						      <div class="col-lg-3 mb-3">
+							      <div class="form-group">
+									<label for="bairro">Bairro</label>
+									<input th:field="*{bairro}"  class="form-control" placeholder="Bairro"/>
+								  </div>
+							  </div>
+							 <div class="col-lg-4 mb-3">	
+	                              <div class="form-group">							
+									<label for="complemento">Complemento</label>
+									<input th:field="*{complemento}"  class="form-control" placeholder="Complemento do endereço"/>
+								</div>
+							</div>
+							
+							<div class="col-lg-5 mb-3">	
+	                              <div class="form-group">							
+									<label for="cidade">Cidade</label>
+									<input th:field="*{cidade}"  class="form-control" placeholder="Cidade"/>
+								</div>
+							</div>	
+						</div>
+                                               
+                        
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+					</form>
+				</div>
+								
+	
+	         </div>
+		    
+		    </div> 
+		    
+		  </div> 
+	     
+		
+	</div>   
+</body>
+</html>
