@@ -1,9 +1,12 @@
 package br.com.luiz.mvc.Visual.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +28,14 @@ public class ProdutoController {
 		return "produto/formulario";
 	}
 	
+	@GetMapping("listarproduto")
+	public String home(Model model) {
+		List<Produto> produto = produtoRepository.findAll();
+		model.addAttribute("produtos", produto);
+		return "produto/listaproduto"; 
+	}
+	
+	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoProduto requisicao, BindingResult result) {
 		
@@ -35,7 +46,7 @@ public class ProdutoController {
 		Produto produto = requisicao.toProduto();
 		produtoRepository.save(produto);
 		
-		return "redirect:/home";
+		return "redirect:/produto/listarproduto";
 	}
 	
 }

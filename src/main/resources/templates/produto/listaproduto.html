@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
+ <title>Lista Usuário</title>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	              
+		    <div class="card-header">:: Lista Produtos ::</div>
+            
+             <div class="mt-2">		    
+		       <a href="/produto"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+		     </div>
+		     
+		    <div class="card-body">
+		         <div class="row ">
+		              <div class="col-md-1 alert alert-dark mb-0">Imagem</div> 
+				     <div class="col-md-5 alert alert-dark mb-0">Nome</div>
+				     <div class="col-md-6 alert alert-dark mb-0">descricao</div>
+				    
+				</div>
+								
+			     <div class="card" th:each="produto : ${produtos}">
+		
+	                <div class="row">
+	                    <div class="col-md-1"><img class="img-thumbnail" th:src="${produto.urlimagem}" src=""></div> 
+	                    <div class="col-md-5"><span th:text="${produto.nome}"> </div>
+	                    <div class="col-md-6"><span th:text="${produto.descricao}"></div>
+	                </div> 
+	   
+				  </div> 
+		    
+		     </div> 
+	     
+		
+	  </div>   
+</body>
+</html>

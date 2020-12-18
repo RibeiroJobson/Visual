@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+ <meta charset="UTF-8" />
+ <title>Lista Usuário</title>
+</head>
+
+<body>
+
+	<nav th:replace="~{base :: menu}"></nav> 
+	  
+	 <div class="container">
+	              
+		    <div class="card-header">:: Lista Cliente ::</div>
+            
+             <div class="mt-2">		    
+		       <a href="/cliente"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+		     </div>
+		     
+		    <div class="card-body">
+		         <div class="row ">
+				     <div class="col-md-4 alert alert-dark mb-0">Nome:</div>
+				     <div class="col-md-4 alert alert-dark mb-0">E-mail:</div>
+				     <div class="col-md-4 alert alert-dark mb-0">Endereco:</div>
+				</div>
+								
+			     <div class="card" th:each="cliente : ${clientes}">
+		
+	                <div class="row">
+	                    <div class="col-md-4"><span th:text="${cliente.nome}"> </div>
+	                    <div class="col-md-4"><span th:text="${cliente.email}"></div>
+	                    <div class="col-md-4"><span th:text="${cliente.endereco}"></div>
+	                </div> 
+	   
+				  </div> 
+		    
+		     </div> 
+	     
+		
+	  </div>   
+</body>
+</html>
